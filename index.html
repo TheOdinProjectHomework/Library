@@ -9,6 +9,34 @@
 </head>
 <body>
     <h1>Library</h1>
+    <hr />
+    <div>
+        <button type="button" id="newBookBtn">New Book</button>
+    </div>
+    <div id="formContainer" class="formContainer hiddenForm">
+        <form action="#" method="#" id="addBookForm">
+            <fieldset>
+                <label for="title">Title:</label>
+                <input type="text" name="title" id="title" placeholder="Title" required/>
+            </fieldset>
+            <fieldset>
+                <label for="author">Author:</label>
+                <input type="text" name="author" id="author" placeholder="Author Name" required/>
+            </fieldset>
+            <fieldset>
+                <label for="pages">Number of pages:</label>
+                <input type="number" name="pages" id="pages" placeholder="Enter number of pages" required/>
+            </fieldset>
+            <fieldset>
+                <p>Have you read this book?</p>
+                <input type="radio" id="alreadyRead" name="readStatus" value="Yes">
+                <label for="alreadyRead">Yes</label><br>
+                <input type="radio" id="notReadYet" name="readStatus" value="No">
+                <label for="notReadYet">No</label><br>
+            </fieldset>
+            <button type="submit">Add Book</button>
+        </form>
+    </div>
     <section id="my-books">
 
     </section>
