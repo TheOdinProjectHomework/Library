@@ -4,8 +4,87 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: "Parkinsans", sans-serif;
+    font-optical-sizing: auto;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-section {
+    text-align: center;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.add-book-div {
+    text-align: center;
+    padding: 1rem;
+}
+
+#newBookBtn {
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+#newBookBtn:hover {
+    box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+.cancelBtn {
+    background-color: #FFE3E3;
+    border-color: #faa4a4;
+}
+
 .formContainer {
     display: block;
+    border-radius: 1rem;
+    border: 1px solid lightgray;
+    padding: 1rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    background-color: #f0eef1;
+}
+
+form {
+    text-align: center;
+}
+
+form > fieldset {
+    padding: .5rem;
+}
+
+form > fieldset > label {
+    font-size: 1.5rem;
+}
+
+form > fieldset > input {
+    border-radius: 1rem;
+    padding: .4rem;
+}
+
+form > fieldset > input[type="radio"] {
+    cursor: pointer;
+}
+
+.submitBtn {
+    background-color: #c2fbd7;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    font-weight: 600;
+    border: 0;
 }
 
 .hiddenForm { 
@@ -13,8 +92,41 @@
 }
 
 /* Card Css */
+#my-books {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card-book {
+    border-radius: 1rem;
+    /* background-color: #c2fbd7; */
+}
 
 .read-div {
-    border: 1px solid red;
+    border: 1px solid #c2fbd7;
+    background-color: #c2fbd7;
     text-align: center;
+}
+
+.not-read-div {
+    border: 1px solid #FFE3E3;
+    background-color: #FFE3E3;
+    text-align: center;
+}
+
+.btn-delete-div {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-delete-div:hover {
+    background-color: #FFE3E3;
+}
+
+.btn-delete-div > img {
+    height: 2rem;
 }

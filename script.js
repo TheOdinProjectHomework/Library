@@ -12,8 +12,12 @@ displayForm.addEventListener("click", () => {
     let formContainer = document.getElementById("formContainer");
     if(show) {
         formContainer.classList.remove("hiddenForm"); 
+        displayForm.textContent = "- Cancel -";
+        displayForm.classList.add("cancelBtn");
     } else {
         formContainer.classList.add("hiddenForm");
+        displayForm.classList.remove("cancelBtn");
+        displayForm.textContent = "+ New Book +";
     }
 })
 const showForm = () => {
@@ -66,14 +70,17 @@ function createCard(title, author, pages, read) {
     let cardAuthor = document.createElement("h4");
     let cardPages = document.createElement('p');
     let cardRead = document.createElement('div');
+    cardContainer.classList.add("card-book");
     cardRead.classList.add("read-div");
     cardTitle.textContent = title;
     cardAuthor.textContent = author;
-    cardPages.textContent = pages;
+    cardPages.textContent = pages + " pages";
     if(read === "true") {
-       cardRead.innerText = "Read"; 
+        cardRead.innerText = "Read"; 
+        cardRead.classList.add("read-div");
     } else {
        cardRead.innerText = "Not Read"; 
+       cardRead.classList.add("not-read-div");
     }
     // read === "true" ? cardRead.innerText = "Read" : cardRead.innerText = "Not Read";
     cardContainer.appendChild(cardTitle);
@@ -97,7 +104,10 @@ function createCard(title, author, pages, read) {
     
     // delete btn//
     let deleteBtn = document.createElement('button');
-    deleteBtn.textContent = 'X';
+    deleteBtn.classList.add("btn-delete-div");
+    let img = document.createElement('img');
+    img.src = "./images/delete-right-svgrepo-com.svg"
+    deleteBtn.appendChild(img);
     deleteBtn.onclick = function() {
         console.log(title);
         let updatedLibrary = myLibrary2.filter((book) => book.title !== title);
